@@ -62,7 +62,7 @@ function twentyfifteen_setup() {
 	load_theme_textdomain( 'twentyfifteen', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+	// add_theme_support( 'automatic-feed-links' );
 
 	/*
 	 * Let WordPress manage the document title.
@@ -353,3 +353,8 @@ require get_template_directory() . '/inc/template-tags.php';
  * @since Twenty Fifteen 1.0
  */
 require get_template_directory() . '/inc/customizer.php';
+
+
+
+/* clear head */
+require get_template_directory() . '/inc/clear.php';
