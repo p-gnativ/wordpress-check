@@ -8,7 +8,7 @@ remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
 // link rel=shortlink
 remove_action('wp_head', 'wp_shortlink_wp_head');
-// rss add_theme_support('automatic-feed-links');
+// rss, remove -> add_theme_support('automatic-feed-links');
 remove_action('wp_head', 'feed_links');
 remove_action('wp_head', 'feed_links_extra');
 // and redirect to home page
