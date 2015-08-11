@@ -20,6 +20,13 @@ add_action('do_feed_rdf', 'as_feed_redirect_to_home', 1);
 add_action('do_feed_rss', 'as_feed_redirect_to_home', 1);
 add_action('do_feed_rss2', 'as_feed_redirect_to_home', 1);
 add_action('do_feed_atom', 'as_feed_redirect_to_home', 1);
+/*
+remove_action( 'wp_head', 'rsd_link');
+remove_action( 'wp_head', 'index_rel_link');
+remove_action( 'wp_head', 'parent_post_rel_link');
+remove_action( 'wp_head', 'start_post_rel_link');
+remove_action( 'wp_head', 'adjacent_posts_rel_link');
+*/
 
 // response headers
 // Link rel=shortlink

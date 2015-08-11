@@ -85,6 +85,11 @@ function twentyfifteen_setup() {
 		'primary' => __( 'Primary Menu',      'twentyfifteen' ),
 		'social'  => __( 'Social Links Menu', 'twentyfifteen' ),
 	) );
+	// registration menu
+	register_nav_menus(array(
+		'main' => __('Main Menu', 'angistudio_pg'),
+		'side' => __('Side Menu', 'angistudio_pg'),
+	));
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -356,5 +361,7 @@ require get_template_directory() . '/inc/customizer.php';
 
 
 
-/* clear head */
+// clean head
 require get_template_directory() . '/inc/clear.php';
+// custom post type
+require get_template_directory() . '/inc/article-post.php';
