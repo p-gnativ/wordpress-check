@@ -30,6 +30,16 @@
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
 		?>
+		<h5>always</h5>
+		<p>website: <?php echo get_post_meta($post->ID, 'meta_website', true); ?></p>
+		
+		<h5>or exists</h5>
+		<?php
+			$meta_website = get_post_meta($post->ID, 'meta_website', true);
+			if(!empty($meta_website)){
+				echo '<p>website: ' . $meta_website . '</p>';
+			}
+		?>
 	</div><!-- .entry-content -->
 
 	<?php edit_post_link( __( 'Edit', 'twentyfifteen' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer><!-- .entry-footer -->' ); ?>
