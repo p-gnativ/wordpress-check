@@ -365,3 +365,5 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/clear.php';
 // custom post type
 require get_template_directory() . '/inc/article-post.php';
+
+require get_template_directory() . '/inc/custom-fields.php';
