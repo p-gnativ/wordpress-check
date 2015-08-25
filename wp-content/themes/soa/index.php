@@ -11,7 +11,7 @@
 </div><!-- #main -->
 
 <div id="main" class="main-three">
-	<div id="main-content">
+	<div class="main-holder">
 		<div id="overlay-fix">
 			<div id="content"><!-- push to article??? -->
 				<div class="c1">
@@ -24,7 +24,7 @@
 		<aside id="sidebar">
 			sidebar
 		</aside><!-- #sidebar -->
-	</div><!-- #main-content -->
+	</div><!-- .main-holder -->
 </div><!-- #main .main-three -->
 </div>
 
