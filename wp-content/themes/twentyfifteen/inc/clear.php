@@ -40,4 +40,42 @@ add_filter('wp_headers', 'as_remove_x_pingback');
 // X-Powered-By
 header_remove('x-powered-by');
 
+
+// menu
+// remove all classes and id, save the necessary classes
+function custom_wp_nav_menu($css_class_id){
+    return is_array($css_class_id) ? array_intersect($css_class_id, array(
+        // list of stored classes for menu
+        'current_page_item',
+        'current_page_parent',
+        'current_page_ancestor',
+        'current-menu-item', // for plugin 'Category Posts in Custom Menu'
+        'first',
+        'last',
+        'vertical',
+        'horizontal'
+    )) : '';
+}
+add_filter('nav_menu_css_class', 'custom_wp_nav_menu');
+add_filter('nav_menu_item_id', 'custom_wp_nav_menu');
+add_filter('page_css_class', 'custom_wp_nav_menu');
+// replacement list classes for 'active'
+function as_replace_class_to_active($text){
+    $replace = array(
+        // list of classes that need to be replaced on 'active'
+        'current_page_item' => 'active',
+        'current_page_parent' => 'active',
+        'current_page_ancestor' => 'active',
+        'current-menu-item' => 'active', // for plugin 'Category Posts in Custom Menu'
+    );
+    $text = str_replace(array_keys($replace), $replace, $text);
+    return $text;
+}
+add_filter('wp_nav_menu','as_replace_class_to_active');
+// remove empty classes and classes for sub menu
+function as_remove_empty_classes($menu) {
+    $menu = preg_replace('/ class=""| class="sub-menu"/', '', $menu);
+    return $menu;
+}
+add_filter ('wp_nav_menu', 'as_remove_empty_classes');
 ?>

@@ -666,8 +666,12 @@ a:focus {
 }
 
 .main-navigation ul ul {
-	display: none;
+	/*display: none;*/
 	margin-left: 0.8em;
+}
+
+.main-navigation li.active > a {
+	font-weight:700;
 }
 
 .main-navigation ul .toggled-on {

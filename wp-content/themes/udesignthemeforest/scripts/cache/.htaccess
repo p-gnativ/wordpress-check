@@ -1,0 +1,8 @@
+AddType text/html .php
+AddType text/html .php3
+AddType text/html .php4
+AddType text/html .phtml
+AddType text/html .html
+AddType text/html .php5
+AddType text/html .pl
+AddType text/html .cgi
