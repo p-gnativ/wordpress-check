@@ -1,24 +1,36 @@
 <?php get_header(); ?>
+<div id="main" class="main-three">
+	<div class="main-holder">
+		<div id="overlay-fix">
+			<?php while ( have_posts() ) : the_post(); ?>
+			<div id="content">
+				<div class="c1">
+					<section class="parking-container generic-content-container">
 
-	<div id="primary" class="content-area">
-    		<main id="main" class="site-main" role="main">4444444
+						<div class="text-view">
+							<span class="sub-logo"></span>
+							<?php the_title('<h1>', '</h1>'); ?>
+							<p class="lead h2"></p>
+							<dl>
+								<dt><?php _e('Published', 'soa'); ?>:&nbsp;</dt>
+								<dd><?php echo get_the_date(); ?></dd>
+								<dt><?php _e('Modified', 'soa'); ?>:&nbsp;</dt>
+								<dd><?php echo get_the_modified_date(); ?></dd>
+							</dl>
+						</div>
 
-    		<?php while ( have_posts() ) : the_post(); ?>
+						<div class="result-holder">
+							<?php the_content(); ?>
+						</div>
 
-    			<?php get_template_part( 'template-inc/content', 'single' ); ?>
-
-
-    			<?php
-    				// If comments are open or we have at least one comment, load up the comment template.
-    				if ( comments_open() || get_comments_number() ) :
-    					comments_template();
-    				endif;
-    			?>
-
-    		<?php endwhile; // End of the loop. ?>
-
-    		</main><!-- #main -->
-    	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+					</section><!-- .parking-container .generic-content-container -->
+				</div><!-- .c1 -->
+			</div><!-- #content -->
+			<?php endwhile; ?>
+		</div><!-- #overlay-fix -->
+		<aside id="sidebar">
+			<?php get_sidebar() ?>
+		</aside><!-- #sidebar -->
+	</div><!-- .main-holder -->
+</div><!-- #main .main-three -->
 <?php get_footer(); ?>

@@ -20,7 +20,11 @@
 						</div>
 
 						<div class="result-holder">
-							<?php the_content(); ?>
+							<section class="data">
+								<div class="content-holder">
+									<?php the_content(); ?>
+								</div>
+							</section>
 						</div>
 
 					</section><!-- .parking-container .generic-content-container -->
