@@ -19,7 +19,7 @@ function soa_scripts() {
 	// Load our main stylesheet
 	wp_enqueue_style('soa-style', get_stylesheet_uri());
 	wp_enqueue_style('soa-overrule-style', get_template_directory_uri() . '/overrule.css');
-
+	wp_enqueue_style('soa-angistudio-style', get_template_directory_uri() . '/update.css');
 
 	wp_enqueue_script('soa-threedots', get_template_directory_uri() . '/js/jquery.threedots.min.js', array('jquery'));
 	wp_enqueue_script('soa-libs', get_template_directory_uri() . '/js/jquery.libs.min.js', array('jquery'));
