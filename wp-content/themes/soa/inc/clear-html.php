@@ -115,6 +115,7 @@ function as_remove_empty_classes($menu) {
 }
 add_filter('wp_nav_menu', 'as_remove_empty_classes');
 */
-add_filter('wpcf7_load_js', '__return_false');
-add_filter('wpcf7_load_css', '__return_false');
+
+//remove_action('ninja_forms_display_css', 'ninja_forms_display_css');
+//remove_action('ninja_forms_display_js', 'ninja_forms_display_js');
 ?>
