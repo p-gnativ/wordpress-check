@@ -9,7 +9,7 @@ Text Domain: as-text-domain
 
 .js-slide-hidden {
 	position:absolute !important;left:-9999px !important;top:-9999px !important;display:block !important}
-header, footer, article, section, hgroup, nav, figure, aside {display: block;}
+header, footer, article, section, nav, figure, aside {display: block;}
 figure {
 	margin:0;
 	padding:0;
@@ -347,7 +347,7 @@ button::-moz-focus-inner {
 .search-form input[type="submit"] ,
 .rissearch-form input[type="submit"] {
 	float:left;
-	background:url(../images/sprite.png) no-repeat -101px 0;
+	background:url(images/sprite.png) no-repeat -101px 0;
 	width:19px;
 	height:18px;
 	overflow:hidden;
@@ -386,6 +386,7 @@ button::-moz-focus-inner {
 	overflow:hidden;
 	padding:8px 0 5px;
 }
+/* fix on */
 #nav {
 	float:left;
 	list-style:none;
@@ -401,66 +402,41 @@ button::-moz-focus-inner {
 	float:left;
 }
 #nav li {
-	padding:7px 19px;
+	padding:7px 19px 7px 21px;
 	position:relative;
 	float:left;
+	background:url(images/separator.png) no-repeat 0 center;
 }
-.add-nav li:before,
-#nav li:before {
-	position:absolute;
-	left:0;
-	top:0;
-	content:"";
-	background:url(../images/separator.png) no-repeat;
-	width:2px;
-	height:31px;
-	overflow:hidden;
-	text-indent:-9999px;
+#nav li:first-child {
+	padding-left:0;
+	background:none;
 }
-#nav li:first-child {padding-left:0;}
-.add-nav li:first-child:before,
-#nav li:first-child:before {display:none;}
-
-/* #nav:after {
-	content:"";
-	border-top:1px solid #bbb;
-	overflow:hidden;
-	text-indent:-9999px;
-	width:999px;
-	position:absolute;
-	right:-400px;
-	top:0;
-} */
-#nav .home button {
-	background:url(../images/sprite.png) no-repeat -208px 0;
+#nav .home a {
+	background:url(images/sprite.png) no-repeat -208px 0;
 	width:20px;
 	height:17px;
 	display:block;
-	text-indent:-9999px;
-	cursor: pointer;
+	text-indent:-99em;
+	cursor:pointer;
+	overflow:hidden;
 }
-#nav .home button:focus {
-	outline: black dotted thin;
-}
-.business-page #nav .home button {
-	background:url(../images/ico-home-business.png) no-repeat;
+#nav .home a:focus {
+	outline:black dotted thin;
 }
 #nav a:hover:before,
 #nav li.active a:before {
-	background:url(../images/sprite.png) no-repeat -152px 0;
+	background:url(images/sprite.png) no-repeat -152px 0;
 	width:9px;
 	height:6px;
 	overflow:hidden;
-	text-indent:-9999px;
+	text-indent:-99em;
 	position:absolute;
 	left:50%;
 	margin:0 0 0 -4px;
 	top:-15px;
 	content:"";
 }
-.business-page #nav a:hover:before, .business-page #nav li.active a:before {
-	background-position: -152px -8px;
-}
+/* fix off */
 .add-nav {
 	float:right;
 	list-style:none;
