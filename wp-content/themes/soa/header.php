@@ -10,7 +10,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="skiplinks">
+	<div class="skip-links">
 		<?php _e('Go directly', 'soa'); ?> <a href="#content"><?php _e('content', 'soa'); ?></a>, <a href="#main_nav"><?php _e('main menu', 'soa'); ?></a> <?php _e('of', 'soa'); ?> <a href="#meta_nav"><?php _e('service menu', 'soa'); ?></a>
 	</div>
 	<div id="wrapper" class="inner">

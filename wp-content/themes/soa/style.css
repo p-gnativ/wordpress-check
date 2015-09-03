@@ -55,11 +55,11 @@ button::-moz-focus-inner {
 	left:0;
 }
 /* skip links */
-.skiplinks {
+.skip-links {
 	position: absolute;
 	left: -1000em;
 }
-.skiplinks a:focus {
+.skip-links a:focus {
 	position: fixed;
 	left: 20px;
 	top: 20px;
