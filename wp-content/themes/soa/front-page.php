@@ -1,6 +1,6 @@
 <?php get_header(); ?>
-<div id="main" class="main-three">
-	<div class="main-holder">
+<div id="main">
+	<div id="main-content">
 		<div id="overlay-fix">
 			<?php while ( have_posts() ) : the_post(); ?>
 			<div id="content">
@@ -8,15 +8,8 @@
 					<section class="parking-container generic-content-container">
 
 						<div class="text-view">
-							<span class="sub-logo"></span>
 							<?php the_title('<h1>', '</h1>'); ?>
 							<p class="lead h2"></p>
-							<dl>
-								<dt><?php _e('Published', 'soa'); ?>:&nbsp;</dt>
-								<dd><?php echo get_the_date(); ?></dd>
-								<dt><?php _e('Modified', 'soa'); ?>:&nbsp;</dt>
-								<dd><?php echo get_the_modified_date(); ?></dd>
-							</dl>
 						</div>
 
 						<div class="result-holder">
@@ -32,9 +25,6 @@
 			</div><!-- #content -->
 			<?php endwhile; ?>
 		</div><!-- #overlay-fix -->
-		<aside id="sidebar">
-			<?php get_sidebar() ?>
-		</aside><!-- #sidebar -->
-	</div><!-- .main-holder -->
-</div><!-- #main .main-three -->
+	</div><!-- #main-content -->
+</div><!-- #main -->
 <?php get_footer(); ?>

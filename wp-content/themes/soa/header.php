@@ -17,11 +17,6 @@
 		<header id="header">
 			<div class="section">
 				<div class="holder">
-					<div class="mobile-box">
-						<span class="btn-menu">
-							<button>Menu <span data-close="Close" data-open="Open">Open</span></button>
-						</span>
-					</div>
 					<?php
 						$logo_path = get_template_directory_uri() . '/images/logo.png';
 						if (is_front_page() && is_home()) : ?>
@@ -41,6 +36,8 @@
 							'container' => 'none',
 							'theme_location' => 'main',
 							'menu_id' => 'nav',
+							'before' => '<span>',
+							'after' => '</span>',
 						) );
 					?>
 				</div>

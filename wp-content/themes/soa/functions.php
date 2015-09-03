@@ -18,8 +18,8 @@ add_action('after_setup_theme', 'as_soa_setup');
 function soa_scripts() {
 	// Load our main stylesheet
 	wp_enqueue_style('soa-style', get_stylesheet_uri());
-	wp_enqueue_style('soa-overrule-style', get_template_directory_uri() . '/overrule.css');
-	wp_enqueue_style('soa-angistudio-style', get_template_directory_uri() . '/update.css');
+	//wp_enqueue_style('soa-overrule-style', get_template_directory_uri() . '/overrule.css');
+	//wp_enqueue_style('soa-angistudio-style', get_template_directory_uri() . '/update.css');
 
 	wp_enqueue_script('soa-threedots', get_template_directory_uri() . '/js/jquery.threedots.min.js', array('jquery'));
 	wp_enqueue_script('soa-libs', get_template_directory_uri() . '/js/jquery.libs.min.js', array('jquery'));
@@ -190,3 +190,19 @@ function cpcm_replace_taxonomy_by_posts1($sorted_menu_items, $args){
 }
 
 add_filter( 'wp_nav_menu_objects', 'cpcm_replace_taxonomy_by_posts1', 1, 2 );
+
+
+
+function as_body_classes($classes){
+	$classes = array();
+	if(is_front_page()) $classes[] = 'home';
+	if(is_user_logged_in()) $classes[] = 'logged-in';
+	if(is_admin_bar_showing()){
+		$classes[] = 'admin-bar';
+		$classes[] = 'no-customize-support';
+	}
+	//$slug = strtolower(str_replace(' ', '-', trim(get_bloginfo('name'))));
+	//$classes[] = $slug;
+	return $classes;
+}
+add_filter('body_class', 'as_body_classes');
