@@ -47,13 +47,9 @@ require get_template_directory() . '/inc/p-lang-to-menu.php';
 require get_template_directory() . '/inc/taxonomy-menu.php';
 // body classes
 require get_template_directory() . '/inc/body-classes.php';
+// home page
+require get_template_directory() . '/inc/home-widgets.php';
 
-/**
- * Implement the Custom Header feature.
- *
- * @since Twenty Fifteen 1.0
- */
-//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -62,3 +58,61 @@ require get_template_directory() . '/inc/body-classes.php';
  */
 require get_template_directory() . '/inc/template-tags.php';
 
+// add style to editor
+function as_add_editor_styles() {
+    add_editor_style('editor-style.css');
+}
+add_action('admin_init', 'as_add_editor_styles');
+// activate button in editor
+function as_mce_editor_buttons($buttons){
+    array_unshift($buttons, 'styleselect');
+    return $buttons;
+}
+add_filter('mce_buttons_2', 'as_mce_editor_buttons');
+// add formats in dropdown
+function as_mce_before_init_insert_formats($init_array){
+	$style_formats = array(
+		array(
+			'title' => 'Home Widgets',
+			'items' => array(
+				array(
+					'title' => 'Sub Title',
+					'block' => 'p',
+					'classes' => 'sub-title',
+				),
+				array(
+					'title' => 'Figure',
+					'block' => 'figure',
+				),
+				array(
+					'title' => 'Class Link Underline',
+					'classes' => 'underline',
+					'selector' => 'a',
+				),
+			)
+		),
+		array(
+			'title' => 'Block Element (div)',
+			'block' => 'div',
+		),
+	);
+	/*$init_array['block_formats'] =
+		'Paragraph=p;' .
+		'Block Element (div)=div;' .
+		'Figure=figure;' .
+		'Heading 1=h1;' .
+		'Heading 2=h2;' .
+		'Heading 3=h3;' .
+		'Heading 4=h4;' .
+		'Heading 5=h5;' .
+		'Heading 6=h6;' .
+		'Address=address;' .
+        'Pre=pre';*/
+	$init_array['style_formats'] = json_encode($style_formats);
+	return $init_array;
+
+}
+add_filter('tiny_mce_before_init', 'as_mce_before_init_insert_formats');
+//global $allowedposttags;
+//var_dump($allowedposttags);
+//$allowedposttags['figure'] = array('class' => array());

@@ -1216,10 +1216,9 @@ function get_dynamic_column( $id = '', $class = '', $widget_area = '' ) {
 }
 // Currently there is no available function to return the contents of a dynamic sidebar. Therefore use this one:
 function udesign_get_dynamic_sidebar($index = '') {
-	$sidebar_contents = "";
+	$sidebar_contents = '';
 	ob_start();
-        if ( function_exists('dynamic_sidebar') && dynamic_sidebar( $index ) )
-	$sidebar_contents = ob_get_clean();
+    if(function_exists('dynamic_sidebar') && dynamic_sidebar($index)) $sidebar_contents = ob_get_clean();
 	return $sidebar_contents;
 }
 
